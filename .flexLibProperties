@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
+  <includeClasses>
+    <classEntry path="com.webintelligence.parsec.core.locale.AbstractLocalizablePM"/>
+    <classEntry path="com.webintelligence.parsec.core.popup.AbstractPopUpPM"/>
+    <classEntry path="com.webintelligence.parsec.core.popup.TitleEnabledPopUpPM"/>
+    <classEntry path="com.webintelligence.parsec.core.util.LocationUtil"/>
+    <classEntry path="com.webintelligence.parsec.core.task.TaskBase"/>
+    <classEntry path="com.webintelligence.parsec.core.task.LoadModuleTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.ProgressNotificationRequestTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.NavigationRequestTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.ConcurrentTaskGroupTag"/>
+    <classEntry path="com.webintelligence.parsec.core.task.InvokeFunctionTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.SequentialTaskGroupTag"/>
+    <classEntry path="com.webintelligence.parsec.core.task.LoadExternalStylesTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.PauseTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.ParsleyMessageTask"/>
+    <classEntry path="com.webintelligence.parsec.core.task.parsleyTaskClasses.ConcurrentTaskGroup"/>
+    <classEntry path="com.webintelligence.parsec.core.task.parsleyTaskClasses.SequentialTaskGroup"/>
+    <classEntry path="com.webintelligence.parsec.core.task.parsleyTaskClasses.TaskGroup"/>
+    <classEntry path="com.webintelligence.parsec.core.task.parsleyTaskClasses.Task"/>
+    <classEntry path="com.webintelligence.parsec.core.debug.UncaughtErrorHandler"/>
+    <classEntry path="com.webintelligence.parsec.core.util.InvalidatingObject"/>
+    <classEntry path="com.webintelligence.parsec.core.services.ServicesActionBase"/>
+  </includeClasses>
+  <includeResources/>
+  <namespaceManifests/>
+</flexLibProperties>
