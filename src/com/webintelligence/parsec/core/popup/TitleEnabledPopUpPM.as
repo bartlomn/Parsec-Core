@@ -81,7 +81,7 @@ public class TitleEnabledPopUpPM
       {
          var resourceLabel:String = getLabel(_title);
          if(resourceLabel == null)
-            throw new Error("String not found in locale! Check aproproiate .properies file.");
+            throw new Error("String '" + _title + "' not found in locale!");
          return resourceLabel;
       }
       return _title;
