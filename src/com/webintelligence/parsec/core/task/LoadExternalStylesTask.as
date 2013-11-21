@@ -41,6 +41,7 @@ public class LoadExternalStylesTask extends TaskBase
    //
    //--------------------------------------------------------------------------
 
+   [Deprecated("Use MapCommandTag now")]
    /**
     *  Constructor
     */

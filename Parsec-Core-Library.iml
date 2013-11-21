@@ -20,6 +20,9 @@
             <entry module-name="Spicelib-Util-Library" build-configuration-name="Spicelib-Util-Library">
               <dependency linkage="Merged" />
             </entry>
+            <entry module-name="Spicelib-Reflect-Library" build-configuration-name="Spicelib-Reflect-Library">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="4.10.0 FP 11.8 AIR 3.8 en_US" />
         </dependencies>
@@ -48,6 +51,7 @@
     <orderEntry type="module" module-name="Parsec-Util-Library" exported="" />
     <orderEntry type="module" module-name="Spicelib-Util-Library" exported="" />
     <orderEntry type="module" module-name="Legacy-Spicelib-Tasks-Library" exported="" />
+    <orderEntry type="module" module-name="Spicelib-Reflect-Library" exported="" />
   </component>
 </module>
 

@@ -16,6 +16,7 @@ import org.spicefactory.parsley.core.context.Context;
  * The ParsleyMessageTask allows interaction between Cairngorm Tasks framework
  * and Parsley message bus
  */
+[Deprecated("Use new command architecture")]
 public class ParsleyMessageTask extends TaskBase
 {
 

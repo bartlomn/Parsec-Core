@@ -16,9 +16,9 @@ import org.spicefactory.lib.task.enum.TaskState;
  *  ready.  Works in conjunction with <code>ModuleViewLoaders</code>
  *  configured with a <code>ExplicitLoadPolicy</code> class.
  *
- *  @see com.hsbc.efi.uui.core.module.ExplicitLoadPolicy
  *  @see http://sourceforge.net/adobe/cairngorm/wiki/HowToUseCairngormModule
  */
+[Deprecated("Use new command architecture")]
 public class LoadModuleTask 
     extends TaskBase
 {
