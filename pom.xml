@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <modelVersion>4.0.0</modelVersion>
+
+   <!--<parent>
+      <groupId>com.fortrus.mobius</groupId>
+      <artifactId>Mobius-Parent</artifactId>
+      <version>2.0-SNAPSHOT</version>
+   </parent>-->
+
+   <groupId>com.webintelligence.parsec</groupId>
+   <artifactId>Parsec-Core-Library</artifactId>
+   <version>1.0.0</version>
+   <packaging>swc</packaging>
+
+   <distributionManagement>
+      <repository>
+         <id>libs-release-local</id>
+         <url>http://v-ts01.scandoc.local/artifactory/libs-release-local</url>
+      </repository>
+   </distributionManagement>
+
+   <dependencyManagement>
+      <dependencies>
+         <dependency>
+            <groupId>org.apache.flex</groupId>
+            <artifactId>framework</artifactId>
+            <version>4.11.0.20131017</version>
+            <type>pom</type>
+            <scope>import</scope>
+         </dependency>
+      </dependencies>
+   </dependencyManagement>
+
+   <dependencies>
+      <dependency>
+         <groupId>org.apache.flex.framework</groupId>
+         <artifactId>flex-framework</artifactId>
+         <type>pom</type>
+      </dependency>
+      <dependency>
+         <groupId>com.webintelligence.parsec</groupId>
+         <artifactId>Parsec-API-Library</artifactId>
+         <version>1.0.0</version>
+         <type>swc</type>
+      </dependency>
+      <dependency>
+         <groupId>com.webintelligence.parsec</groupId>
+         <artifactId>Parsec-Util-Library</artifactId>
+         <version>1.0.0</version>
+         <type>swc</type>
+      </dependency>
+      <dependency>
+         <groupId>org.spicefactory.parsley.core</groupId>
+         <artifactId>Parsley-Core-Library</artifactId>
+         <version>3.0.0</version>
+         <type>swc</type>
+      </dependency>
+      <dependency>
+         <groupId>org.spicefactory.lib.task</groupId>
+         <artifactId>Legacy-Spicelib-Tasks-Library</artifactId>
+         <version>2.5.0</version>
+         <type>swc</type>
+      </dependency>
+      <dependency>
+         <groupId>org.spicefactory.lib</groupId>
+         <artifactId>Spicelib-Util-Library</artifactId>
+         <version>3.1.0</version>
+         <type>swc</type>
+      </dependency>
+      <dependency>
+         <groupId>org.spicefactory.lib.reflect</groupId>
+         <artifactId>Spicelib-Reflect-Library</artifactId>
+         <version>3.0.0</version>
+         <type>swc</type>
+      </dependency>
+   </dependencies>
+
+   <build>
+      <sourceDirectory>src</sourceDirectory>
+      <plugins>
+         <plugin>
+            <groupId>net.flexmojos.oss</groupId>
+            <artifactId>flexmojos-maven-plugin</artifactId>
+            <version>7.0.0-SNAPSHOT</version>
+            <extensions>true</extensions>
+            <configuration>
+               <debug>true</debug>
+               <showWarnings>false</showWarnings>
+            </configuration>
+            <dependencies>
+               <dependency>
+                  <groupId>org.apache.flex</groupId>
+                  <artifactId>compiler</artifactId>
+                  <version>4.11.0.20131017</version>
+                  <type>pom</type>
+               </dependency>
+            </dependencies>
+         </plugin>
+      </plugins>
+   </build>
+
+</project>
