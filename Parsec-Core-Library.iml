@@ -49,7 +49,6 @@
     <orderEntry type="module" module-name="Parsley-Core-Library" exported="" />
     <orderEntry type="module" module-name="Parsec-API-Library" exported="" />
     <orderEntry type="module" module-name="Parsec-Util-Library" exported="" />
-    <orderEntry type="module" module-name="Spicelib-Util-Library" exported="" />
     <orderEntry type="module" module-name="Legacy-Spicelib-Tasks-Library" exported="" />
     <orderEntry type="module" module-name="Spicelib-Reflect-Library" exported="" />
   </component>
