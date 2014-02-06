@@ -106,7 +106,7 @@ public class UncaughtErrorHandler
             "UncaughtErrorEvent:\n" + event.toString(),
             event.error));
       }
-      LOG.fatal("UncaughtErrorEvent caught {0}", event.toString());
+      LOG.fatal("UncaughtErrorEvent caught {0}: {1}", event.toString(), event.error.toString());
    }
    
 }
