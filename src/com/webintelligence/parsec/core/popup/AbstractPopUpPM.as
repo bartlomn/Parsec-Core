@@ -5,6 +5,9 @@ import com.webintelligence.parsec.core.locale.AbstractLocalizablePM;
 import flash.events.Event;
 import flash.events.IEventDispatcher;
 
+import org.spicefactory.lib.logging.LogContext;
+import org.spicefactory.lib.logging.Logger;
+import org.spicefactory.lib.reflect.ClassInfo;
 
 /***************************************************************************
  * 
@@ -33,7 +36,12 @@ public /* abstract */ class AbstractPopUpPM
    //  Class constants
    //
    //--------------------------------------------------------------------------
-   
+
+   /**
+    *  @private
+    */
+   protected var LOG:Logger = LogContext.getLogger( ClassInfo.forInstance( this ).getClass() );
+
    /**
     *  enumerates open property change event type
     */
