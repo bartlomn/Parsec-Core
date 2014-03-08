@@ -31,6 +31,11 @@ public class LoadModuleCommand
     */
    private var _isActive:Boolean;
 
+   /**
+    *  @private
+    */
+   private var _lastLog:int;
+
    [MessageDispatcher]
    /**
     *  @private
@@ -75,8 +80,11 @@ public class LoadModuleCommand
       if (!isActiveForModule(msg.moduleId))
          return;
       var p:int = ( msg.bytesLoaded / msg.bytesTotal ) * 100;
-      if ( p % 10 == 0 )
+      if ( p % 10 == 0 && p != _lastLog )
+      {
          LOG.debug( "Progress loading module ({0}): {1}% complete", moduleId, p );
+         _lastLog = p;
+      }
    }
 
    /**

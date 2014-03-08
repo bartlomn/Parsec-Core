@@ -31,6 +31,11 @@ public class LoadExternalStylesCommand implements IMXMLObject
 
    /**
     *  @private
+    */
+   private var _lastLog:int;
+
+   /**
+    *  @private
     *  style manager pointer
     */
    private var styleManager:IStyleManager2;
@@ -147,8 +152,11 @@ public class LoadExternalStylesCommand implements IMXMLObject
    private function styleLoader_progressHandler( event:StyleEvent ):void
    {
       var p:int = ( event.bytesLoaded / event.bytesTotal ) * 100;
-      if ( p % 10 == 0 )
+      if ( p % 10 == 0 && p != _lastLog )
+      {
          LOG.debug( "Progress loading styles ({0}): {1}% complete", url, p );
+         _lastLog = p;
+      }
    }
 
    /**
