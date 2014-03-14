@@ -154,7 +154,9 @@ public class LoadExternalStylesCommand implements IMXMLObject
       var p:int = ( event.bytesLoaded / event.bytesTotal ) * 100;
       if ( p % 10 == 0 && p != _lastLog )
       {
-         LOG.debug( "Progress loading styles ({0}): {1}% complete", url, p );
+         var tk:int = Math.floor( ( event.bytesTotal + 1023 ) / 1024 );
+         var lk:int = Math.floor( ( event.bytesLoaded + 1023 ) / 1024 );
+         LOG.debug( "Progress loading styles ({0}): {2}kB/{3}kB ({1}%) complete", url, p, lk, tk );
          _lastLog = p;
       }
    }

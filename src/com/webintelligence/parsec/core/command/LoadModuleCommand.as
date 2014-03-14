@@ -82,7 +82,9 @@ public class LoadModuleCommand
       var p:int = ( msg.bytesLoaded / msg.bytesTotal ) * 100;
       if ( p % 10 == 0 && p != _lastLog )
       {
-         LOG.debug( "Progress loading module ({0}): {1}% complete", moduleId, p );
+         var tk:int = Math.floor( ( msg.bytesTotal + 1023 ) / 1024 );
+         var lk:int = Math.floor( ( msg.bytesLoaded + 1023 ) / 1024 );
+         LOG.debug( "Progress loading module ({0}): {2}kB/{3}kB ({1}%) complete", moduleId, p, lk, tk );
          _lastLog = p;
       }
    }
