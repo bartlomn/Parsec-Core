@@ -1,14 +1,13 @@
 package com.webintelligence.parsec.core.services
 {
+import com.webintelligence.parsec.core.invalidating.InvalidatingObject;
 import com.webintelligence.parsec.core.message.lifecycle.NotifyCriticalErrorMsg;
-import com.webintelligence.parsec.core.util.InvalidatingObject;
 
 import flash.errors.IllegalOperationError;
 
 import mx.rpc.Responder;
 import mx.rpc.events.FaultEvent;
 import mx.rpc.events.ResultEvent;
-
 
 /***************************************************************************
  * 

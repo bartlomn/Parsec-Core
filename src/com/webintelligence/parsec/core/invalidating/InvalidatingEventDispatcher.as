@@ -1,11 +1,13 @@
-package com.webintelligence.parsec.core.util
+package com.webintelligence.parsec.core.invalidating
 {
 
-import flash.events.EventDispatcher;
+import com.webintelligence.parsec.core.log.LogAwareEventDispatcher;
+
 import mx.core.FlexGlobals;
 import mx.core.IMXMLObject;
 import mx.core.UIComponent;
 
+import org.spicefactory.lib.errors.IllegalStateError;
 
 /***************************************************************************
  * 
@@ -16,8 +18,8 @@ import mx.core.UIComponent;
  * 
  ***************************************************************************/
 
-public class InvalidatingObject 
-   extends EventDispatcher 
+public class InvalidatingEventDispatcher
+   extends LogAwareEventDispatcher
    implements IMXMLObject
 {
    
@@ -30,7 +32,7 @@ public class InvalidatingObject
    /**
     *  Constructor
     */
-   public function InvalidatingObject()
+   public function InvalidatingEventDispatcher()
    {
       super();
    }
@@ -113,9 +115,9 @@ public class InvalidatingObject
     */
    public function initialize(document:Object = null):void
    {
-      uiComponent = UIComponent((document is UIComponent) ? document :
-         FlexGlobals.topLevelApplication);
-      
+      uiComponent =
+            UIComponent(( document is UIComponent ) ? document : FlexGlobals.topLevelApplication );
+
       invalidateProperties();
    }
    
@@ -124,6 +126,9 @@ public class InvalidatingObject
     */
    public function invalidateProperties():void
    {
+      if( !isInitialized )
+         _log.warn( "Cannot invalidate. Component not initialised." );
+
       if (invalidatePropertiesFlag && !callLaterPending)
          return;
       
@@ -166,6 +171,7 @@ public class InvalidatingObject
     */
    protected function commitProperties():void
    {
+      // Abstract
    }
 }
 }
