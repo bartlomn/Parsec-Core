@@ -1,4 +1,4 @@
-package com.webintelligence.parsec.core.util
+package com.webintelligence.parsec.core.browser
 {
 import flash.external.ExternalInterface;
 
@@ -6,7 +6,7 @@ import flash.external.ExternalInterface;
  *  Helper for interacting with the HTML page location object
  */
 final public /* abstract */
-class LocationUtil
+class BrowserLocationUtil
 {
    /**
     *  The protocol used to serve this Flex app, eg, "http" or "file"

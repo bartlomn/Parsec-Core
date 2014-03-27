@@ -7,7 +7,7 @@ import com.webintelligence.parsec.core.message.module.LoadModuleMsg;
 import com.webintelligence.parsec.core.message.module.LoadModuleProgressMsg;
 import com.webintelligence.parsec.core.message.module.LoadModuleReadyMsg;
 import com.webintelligence.parsec.core.message.module.ModuleContextReadyMsg;
-import com.webintelligence.parsec.core.util.LocationUtil;
+import com.webintelligence.parsec.core.browser.BrowserLocationUtil;
 
 import org.spicefactory.lib.task.enum.TaskState;
 
@@ -39,7 +39,7 @@ public class LoadModuleTask
         timeout = 30000; // 30 seconds of inactivity
         
         // for testing
-        var loadTimeout:Number = Number(LocationUtil.getQueryParameter("load_timeout"));
+        var loadTimeout:Number = Number(BrowserLocationUtil.getQueryParameter("load_timeout"));
         if (loadTimeout)
             timeout = Number(loadTimeout);
     }

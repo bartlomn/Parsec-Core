@@ -1,7 +1,7 @@
 package com.webintelligence.parsec.core.task
 {
 
-import com.webintelligence.parsec.core.util.LocationUtil;
+import com.webintelligence.parsec.core.browser.BrowserLocationUtil;
 
 import flash.events.IEventDispatcher;
 import flash.system.ApplicationDomain;
@@ -51,7 +51,7 @@ public class LoadExternalStylesTask extends TaskBase
       timeout = 30000; // 30 seconds of inactivity
 
       // for testing
-      var loadTimeout:Number = Number( LocationUtil.getQueryParameter( "load_timeout" ));
+      var loadTimeout:Number = Number( BrowserLocationUtil.getQueryParameter( "load_timeout" ));
       if ( loadTimeout )
          timeout = Number( loadTimeout );
    }
