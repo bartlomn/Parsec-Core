@@ -42,10 +42,10 @@ public class LogAwareEventDispatcher
       try
       {
          _log  = LogContext.getLogger( _info.name );
-         _LOG.debug( "Logger instance created for {1}", this );
+         _LOG.debug( "Logger instance created for {0}", _info.simpleName );
       } catch( e:Error )
       {
-         _LOG.error( "Logger instance creation failed for {0}, error: {1}", this, e.message );
+         _LOG.error( "Logger instance creation failed for {0}, error: {1}", _info.simpleName, e.message );
       }
    }
 }
