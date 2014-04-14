@@ -44,9 +44,9 @@ public class TitleEnabledPopUpPM
    /**
     *  Constructor
     */
-   public function TitleEnabledPopUpPM(target:IEventDispatcher=null)
+   public function TitleEnabledPopUpPM()
    {
-      super(target);
+      super();
       useResources = true;
    }
    

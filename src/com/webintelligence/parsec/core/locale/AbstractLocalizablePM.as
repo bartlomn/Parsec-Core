@@ -1,7 +1,6 @@
 package com.webintelligence.parsec.core.locale
 {
-import flash.events.EventDispatcher;
-import flash.events.IEventDispatcher;
+import com.webintelligence.parsec.core.invalidating.InvalidatingEventDispatcher;
 
 import mx.resources.IResourceManager;
 import mx.resources.ResourceManager;
@@ -15,7 +14,7 @@ import mx.resources.ResourceManager;
  ***************************************************************************/
 
 public /* abstract */ class AbstractLocalizablePM 
-   extends EventDispatcher 
+   extends InvalidatingEventDispatcher
    implements ILocalizablePM
 {
    
@@ -40,9 +39,9 @@ public /* abstract */ class AbstractLocalizablePM
    /**
     *  Constructor
     */
-   public function AbstractLocalizablePM(target:IEventDispatcher=null)
+   public function AbstractLocalizablePM()
    {
-      super(target);
+      super();
    }
    
    //--------------------------------------------------------------------------

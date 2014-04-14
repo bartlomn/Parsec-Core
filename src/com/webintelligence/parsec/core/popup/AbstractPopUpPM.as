@@ -56,9 +56,9 @@ public /* abstract */ class AbstractPopUpPM
    /**
     *  Constructor
     */
-   public function AbstractPopUpPM(target:IEventDispatcher=null)
+   public function AbstractPopUpPM()
    {
-      super(target);
+      super();
    }
    
    //--------------------------------------------------------------------------
@@ -81,13 +81,18 @@ public /* abstract */ class AbstractPopUpPM
    //--------------------------------------
    //  open
    //--------------------------------------
+
    /**
     *  @private
     */
    private var _open:Boolean;
    
+   /**
+    *  @private
+    */
+   private var _openChanged:Boolean;
+
    [Bindable("popUpOpenPropertyChanged")]
-   
    /**
     *  @see IPopUpPM
     */
@@ -95,15 +100,33 @@ public /* abstract */ class AbstractPopUpPM
    {
       return _open;
    }
-   
+   /**
+    *  @private
+    */
    public function set open(value:Boolean):void
    {
+      if( !isInitialized )
+         initialize();
+
       if(_open != value)
       {
          _open = value;
-         dispatchEvent(new Event(OPEN_PROP_CHANGED));
+         _openChanged = true;
+         invalidateProperties();
       }
    }
-   
+
+   /**
+    *  @inheritDoc
+    */
+   override protected function commitProperties() : void
+   {
+      super.commitProperties();
+      if( _openChanged )
+      {
+         dispatchEvent(new Event(OPEN_PROP_CHANGED));
+         _openChanged = false;
+      }
+   }
 }
 }
