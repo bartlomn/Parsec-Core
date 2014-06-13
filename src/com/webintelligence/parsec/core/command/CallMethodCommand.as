@@ -55,11 +55,14 @@ public class CallMethodCommand
             target;
       if( targetInstance.hasOwnProperty( method ))
       {
-         var methodInstance:Function = targetInstance[ method ] as Function;
+         var methodInstance:Object = targetInstance[ method ];
          LOG.debug( "Calling {0}.{1}", ClassInfo.forInstance( targetInstance ).simpleName, method )
          try
          {
-            methodInstance.apply( null, methodArguments );
+            if( methodInstance )
+               methodInstance.apply( null, methodArguments );
+            else if( methodArguments && methodArguments.length == 1 )
+               targetInstance[ method ] = methodArguments[ 0 ];
          }
          catch( e:ArgumentError )
          {
